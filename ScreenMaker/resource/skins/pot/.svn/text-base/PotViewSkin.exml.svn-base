@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="PotViewSkin" width="640" height="1039" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Group id="kGrpMain" y="0" horizontalCenter="0" width="640" height="1039">
+		<e:Image anchorOffsetY="0" height="282.31" width="640" source="pot_up_bg_png" top="0" scale9Grid="285,304,72,12" horizontalCenter="0"/>
+		<e:Image scale9Grid="41,29,39,14" anchorOffsetY="0" source="pot_desk_png" bottom="-30" horizontalCenter="0"/>
+		<e:Group top="0" left="10">
+			<e:Image source="pot_score_bg_png" scale9Grid="121,107,19,16" anchorOffsetX="0" top="0" width="162.33" anchorOffsetY="0" height="117.73" horizontalCenter="0"/>
+			<e:Label text="接待客人数" y="41.36" bold="true" textColor="0xb27140" size="25" horizontalCenter="0"/>
+			<e:Label id="kLabelScore" text="6666" verticalCenter="28" bold="true" textColor="0xb27140" size="25" horizontalCenter="0"/>
+		</e:Group>
+		<e:Group id="kGrpFood" y="535.63" anchorOffsetX="275" anchorOffsetY="275" horizontalCenter="0" rotation="0">
+			<e:Image scaleY="1" horizontalCenter="0" verticalCenter="0" source="pot_pot_bg_png"/>
+			<e:Rect width="20" height="20" x="113" y="109"/>
+			<e:Image source="pot_pot_png" horizontalCenter="0" verticalCenter="-45.5"/>
+		</e:Group>
+		<e:Button id="kBtnReturn" label="返 回" y="56.4" right="14" scaleX="0.8" scaleY="0.8">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="pot_btn_back_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" size="45" bold="true"/>
+				</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Image source="pot_target_bg_png" x="41.83" y="118" scaleX="0.5" scaleY="0.5"/>
+		<e:Button id="kBtnParse" label="" x="492.6" y="137.17">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="pot_parse_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+		</e:Button>
+	</e:Group>
+</e:Skin>

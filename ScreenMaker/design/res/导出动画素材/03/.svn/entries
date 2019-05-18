@@ -1,0 +1,67 @@
+10
+
+dir
+87
+svn://ly@39.104.134.59/treasure/src/ScreenMaker/design/res/%E5%AF%BC%E5%87%BA%E5%8A%A8%E7%94%BB%E7%B4%A0%E6%9D%90/03
+svn://ly@39.104.134.59/treasure
+
+
+
+2019-05-08T16:29:04.661415Z
+56
+ly
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+322dead7-99d7-4fcb-8dad-d1f8efcff29e
+
+win_quit_03
+dir
+
+stay_03
+dir
+
+lost_quit_03
+dir
+
+drop_03
+dir
+
+wait_03
+dir
+
+stop_03
+dir
+
+hlod_1_03
+dir
+
+move_03
+dir
+
+hold_2_03
+dir
+
+eat_1_03
+dir
+
+eat_2_03
+dir
+
+fail_03
+dir
+
+jump_03
+dir
+

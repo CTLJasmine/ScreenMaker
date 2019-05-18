@@ -1,0 +1,12 @@
+/**
+ * 游戏内跨模块事件
+ */
+class EventConst {
+    public static LOAD_PROGRESS = "load_progress";// 加载进度
+
+    public static EVENT_SHOW_WINDOW = "EVENT_SHOW_WINDOW";// 显示弹窗界面 搭配 参数 界面type、场景layer类型 一起使用 
+    public static EVENT_COLLECT_GOODS = "EVENT_COLLECT_GOODS";// 点击收集物品
+    public static EVENT_UPDATE_SCORE = "EVENT_UPDATE_SCORE";// 更新比分
+    public static EVENT_UPDATE_REMAINTIME = "EVENT_UPDATE_REMAINTIME";// 更新剩余比赛时间
+    public static EVENT_UPDATE_ONGOING = "EVENT_UPDATE_ONGOING";// 更新连击次数
+}

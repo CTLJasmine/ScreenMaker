@@ -1,0 +1,1 @@
+{"version":3,"file":"BaseUILayer.js","sourceRoot":"","sources":["../../../src/core/base/BaseUILayer.ts"],"names":[],"mappings":";;;;;;;;;;AAAA;IAA0B,+BAAS;IAC/B;QAAA,YACI,iBAAO,SAMV;QAJG,KAAI,CAAC,aAAa,GAAG,GAAG,CAAC;QACzB,KAAI,CAAC,YAAY,GAAG,GAAG,CAAC;QAExB,KAAI,CAAC,YAAY,GAAG,KAAK,CAAC;;IAC9B,CAAC;IACL,kBAAC;AAAD,CAAC,AATD,CAA0B,GAAG,CAAC,KAAK,GASlC;AATK,UAAA,WAAW,0BAShB,CAAA"}

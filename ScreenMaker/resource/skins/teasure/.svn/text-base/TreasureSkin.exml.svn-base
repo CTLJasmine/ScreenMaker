@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="TreasureSkin" width="1039" height="640" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Group height="640" width="1039" horizontalCenter="0" verticalCenter="0">
+		<e:Image source="bg_0_0_png" horizontalCenter="0" verticalCenter="0"/>
+		<e:Group id="kGrpGoods" width="1039" height="640" horizontalCenter="0" verticalCenter="0">
+		</e:Group>
+		<e:Image id="kImgFrame" source="main_frame_bg_png" horizontalCenter="0" verticalCenter="0" touchEnabled="false" locked="true"/>
+		<e:Label text="分数：" textColor="0x000000" bold="true" anchorOffsetX="0" anchorOffsetY="0" size="15" left="2" top="9"/>
+		<e:Label id="kLabelTime" text="02:03" textColor="0x000000" bold="true" anchorOffsetX="0" anchorOffsetY="0" size="15" right="16" top="7"/>
+		<e:Label id="kLabelScore" text="160" textColor="0x000000" bold="true" anchorOffsetX="0" anchorOffsetY="0" size="15" left="114" top="9"/>
+		<e:Group id="kGrpResult" height="77" x="182" y="558" anchorOffsetY="0" anchorOffsetX="0" width="474">
+			<e:layout>
+				<e:TileLayout horizontalAlign="center" verticalAlign="middle" requestedRowCount="2" requestedColumnCount="3" rowAlign="justifyUsingHeight" columnAlign="justifyUsingGap"/>
+			</e:layout>
+		</e:Group>
+		<e:Label text="已找到" x="336" y="534" size="12" bold="true"/>
+		<e:Image source="main_json.main_bar_result" x="393" y="533" scaleX="1" scaleY="1"/>
+		<e:Button id="kBtnHelp" label="" x="709" y="570">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="main_json.main_btn_search_on" source.down="main_json.main_btn_search_down" source.disabled="main_json.main_btn_search_disable"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Label id="kLabelOnGoing" text="连击: " x="713" y="6.5" bold="true" size="25" textColor="0xffffff"/>
+		<e:Image source="goods_51_png" x="817" y="115.5"/>
+	</e:Group>
+	<e:Group id="kGrpParse" horizontalCenter="0" verticalCenter="-2" visible="false">
+		<e:Group y="290" x="0" visible="false">
+			<e:Label text="音乐音量" y="0" bold="true" x="55"/>
+			<e:Group y="43" x="0">
+			<e:Image source="main_json.main_bar_bg" x="0" y="2"/>
+			<e:Image source="main_json.main_btn_control_down" x="86" y="0"/>
+			</e:Group>
+			<e:Label text="音乐音量" y="105" bold="true" x="55"/>
+			<e:Group y="62" x="0">
+			<e:Image source="main_json.main_bar_bg" x="0" y="2"/>
+			<e:Image source="main_json.main_btn_control_down" x="86" y="0"/>
+			</e:Group>
+			<e:layout>
+			<e:VerticalLayout horizontalAlign="center" verticalAlign="middle"/>
+			</e:layout>
+		</e:Group>
+		<e:Label id="kLabelTip" text="重新开始" y="260.32" size="50" bold="true" textColor="0x000000" horizontalCenter="0"/>
+		<e:Button id="kBtnTest" label="" y="65" horizontalCenter="0">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="com_json.com_btn_play_on" source.down="com_json.com_btn_play_down"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+	</e:Group>
+</e:Skin>

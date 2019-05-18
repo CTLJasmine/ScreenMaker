@@ -1,0 +1,83 @@
+10
+
+dir
+87
+svn://ly@39.104.134.59/treasure/src/ScreenMaker/src/core
+svn://ly@39.104.134.59/treasure
+
+
+
+2019-05-10T21:25:21.877291Z
+69
+ly
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+322dead7-99d7-4fcb-8dad-d1f8efcff29e
+
+dragonBones
+dir
+
+event
+dir
+
+App.ts
+file
+
+
+
+
+2019-05-14T16:35:18.000000Z
+327c8ccd00758ad162e7325b1338e499
+2019-05-10T21:25:21.877291Z
+69
+ly
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3341
+
+net
+dir
+
+Manager
+dir
+
+base
+dir
+
+util
+dir
+
+MoveClip
+dir
+

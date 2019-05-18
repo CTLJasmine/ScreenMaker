@@ -1,0 +1,25 @@
+/** 
+ *  场景生成器数据管理文件
+ *  ProductModel.ts
+ *  egret
+ *
+ *  Created by Liu Yang on 19/05/12.
+ */
+
+/* 选择的素材类型 */
+enum SELECT_TYPE {
+    NULL = -1,// 未选中的空类型
+    BG = 0, // 背景
+    GOODS = 1, // 物品
+}
+class ProductModel {
+    private static _instance: ProductModel;
+    public static get instance(): ProductModel {
+        if (!this._instance) this._instance = new ProductModel();
+        return this._instance;
+    }
+
+    public goodsInFactory: number[] = [];// 当前场景中已经选择的道具
+    public selectType: SELECT_TYPE = SELECT_TYPE.NULL;// 当前场景管理器中素材的处理类型
+    
+}

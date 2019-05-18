@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="FoodComponentSkin" width="80" height="80" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image id="kImgFood" source="food_1_png" scaleX="0.5" scaleY="0.5" horizontalCenter="0" verticalCenter="0"/>
+</e:Skin>

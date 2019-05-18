@@ -1,0 +1,30 @@
+{
+    "version": 5,
+    "files": [
+        "./com/com_btn_r3.png",
+        "./com/com_btn_r2.png",
+        "./com/com_btn_r1.png",
+        "./com/com_btn_g3.png",
+        "./com/com_btn_g2.png",
+        "./com/com_btn_g1.png",
+        "./com/com_btn_del.png",
+        "./com/com_btn_check.png",
+        "./com/com_btn_arrow_right.png",
+        "./com/com_btn_arrow_left.png",
+        "./com/com_bg_7.png",
+        "./com/com_bg_6.png",
+        "./com/com_bg_5.png",
+        "./com/com_bg_4.png",
+        "./com/com_bg_3.png",
+        "./com/com_bg_2.png",
+        "./com/com_bg_1.png"
+    ],
+    "projectName": "com",
+    "options": {
+        "layoutMath": "3",
+        "sizeMode": "free",
+        "useExtension": 0,
+        "layoutGap": 1,
+        "extend": 1
+    }
+}

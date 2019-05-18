@@ -1,0 +1,11 @@
+[
+{"id":"1","type":"1","name":"某种菜","desc":"嘎嘣","addition":"1"},
+{"id":"2","type":"2","name":"某种肉","desc":"咯吱","addition":"1"},
+{"id":"3","type":"3","name":"某种海鲜","desc":"吧唧","addition":"1"},
+{"id":"4","type":"1","name":"某种菜","desc":"嘎嘣","addition":"1"},
+{"id":"5","type":"2","name":"某种肉","desc":"咯吱","addition":"1"},
+{"id":"6","type":"3","name":"某种海鲜","desc":"吧唧","addition":"1"},
+{"id":"7","type":"4","name":"一摞某种菜","desc":"嘎嘣嘎嘣","addition":"2"},
+{"id":"8","type":"5","name":"一坨某种肉","desc":"咯吱咯吱","addition":"2"},
+{"id":"9","type":"6","name":"一堆某种海鲜","desc":"吧唧吧唧","addition":"2"}
+]

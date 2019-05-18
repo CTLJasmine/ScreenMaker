@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ProductionSkin" width="1394" height="640" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Group id="kGrpFactory" width="1039" height="640" verticalCenter="0" x="355">
+		<e:Image id="kImgBg" horizontalCenter="0" verticalCenter="0" x="-173" y="0" scaleX="1" scaleY="1" source=""/>
+		<e:Image source="com_json.com_bg_5" scale9Grid="28,31,12,7" left="0" right="0" top="0" bottom="0" width="1039" height="640"/>
+		<e:Group id="kGrpGoods" left="0" right="0" top="0" bottom="0"/>
+	</e:Group>
+	<e:Group id="kGrpSelect" anchorOffsetY="0" height="640" anchorOffsetX="0" width="355" verticalCenter="0" x="0">
+		<e:Image source="com_json.com_bg_2" scale9Grid="26,26,2,3" anchorOffsetX="0" anchorOffsetY="0" left="0" right="-0.3299999999999841" top="1" bottom="-0.6699999999999591"/>
+		<e:Group id="kGrpSwitch" x="325" verticalCenter="0" touchChildren="false" visible="false" locked="true">
+			<e:Image source="com_json.com_bg_2" x="8.36" scale9Grid="23,25,5,2" scaleX="1" scaleY="1" anchorOffsetY="0" height="130" anchorOffsetX="0" width="76.67" verticalCenter="0"/>
+			<e:Image id="kImgArrow" source="com_json.com_btn_arrow_left" x="0" verticalCenter="0"/>
+		</e:Group>
+		<e:Group horizontalCenter="0.5" top="15" locked="true">
+			<e:Button id="kBtnBg" label="底图" x="0" y="0">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="com_json.com_btn_r3" source.disabled="com_json.com_btn_g3"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="-5" bold="true" size="25"/>
+				</e:Skin>
+			</e:skinName>
+			</e:Button>
+			<e:Button id="kBtnGoods" label="物品" x="132" y="5">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="com_json.com_btn_r3" source.disabled="com_json.com_btn_g3"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="-5" bold="true" size="25"/>
+				</e:Skin>
+			</e:skinName>
+			</e:Button>
+			<e:layout>
+			<e:HorizontalLayout horizontalAlign="center" verticalAlign="middle" gap="20"/>
+			</e:layout>
+		</e:Group>
+		<e:Group x="10" bottom="110" top="90">
+			<e:Image source="com_json.com_bg_3" left="0" right="0" top="0" bottom="0" scale9Grid="29,26,2,6"/>
+			<e:Scroller width="336" anchorOffsetY="0" anchorOffsetX="0" x="0" top="0" bottom="0">
+				<e:Group id="kGrpWarehouse">
+				<e:layout>
+					<e:VerticalLayout horizontalAlign="center" verticalAlign="middle"/>
+				</e:layout>
+				</e:Group>
+			</e:Scroller>
+		</e:Group>
+		<e:Group id="kGrpSelectBgCondition" bottom="16" horizontalCenter="-45" visible="false">
+			<e:EditableText id="kBgInputId1" width="100" height="30" x="0" y="0" prompt="章节id"/>
+			<e:EditableText id="kBgInputId2" width="100" height="30" x="10" y="10" prompt="副本id"/>
+			<e:layout>
+				<e:HorizontalLayout/>
+			</e:layout>
+		</e:Group>
+		<e:Group id="kGrpSelectGoodsCondition" horizontalCenter="-45" bottom="16">
+			<e:EditableText id="kGoodsInputStart" width="100" height="30" x="0" y="0" prompt="起始id" textColor="0xff9e00" bold="true" text=""/>
+			<e:EditableText id="kGoodsInputEnd" width="100" height="30" x="10" y="10" prompt="结束id" textColor="0xff7800" bold="true"/>
+			<e:layout>
+			<e:HorizontalLayout/>
+			</e:layout>
+		</e:Group>
+		<e:Button id="kBtnConditionConfirm" label="确定" y="589.66" scaleX="0.6" scaleY="0.6" right="30">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="com_json.com_btn_r3" source.disabled="com_json.com_btn_g3"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:EditableText id="kEditItemList" text="" prompt="请输入需要加载的道具id" promptColor="0xb87aff" bold="true" size="20" verticalCenter="241.5" textAlign="center" verticalAlign="middle" lineSpacing="5" left="10" right="10" background="true" backgroundColor="0xc6c6c6" textColor="0xbb7cff" anchorOffsetY="0" height="37"/>
+	</e:Group>
+</e:Skin>

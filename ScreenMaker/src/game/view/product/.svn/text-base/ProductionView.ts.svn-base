@@ -1,0 +1,198 @@
+/** 
+ *  场景生成器
+ *  ProductionView.ts
+ *  egret
+ *
+ *  Created by Liu Yang on 19/05/08.
+ */
+class ProductionView extends BaseView {
+    public kGrpFactory: eui.Group;
+    public kImgBg: eui.Image;
+    public kGrpSelect: eui.Group;
+    public kGrpSwitch: eui.Group;
+    public kImgArrow: eui.Image;
+    public kBtnBg: eui.Button;
+    public kBtnGoods: eui.Button;
+    public kGrpWarehouse: eui.Group;
+    public kGrpSelectBgCondition: eui.Group;
+    public kBgInputId1: eui.EditableText;
+    public kBgInputId2: eui.EditableText;
+    public kGrpSelectGoodsCondition: eui.Group;
+    public kGoodsInputStart: eui.EditableText;
+    public kGoodsInputEnd: eui.EditableText;
+    public kBtnConditionConfirm: eui.Button;
+
+    private mBgCon: number[] = [];// 背景资源选择条件
+    private mGoodsStartId: number = -1;// 物品资源加载起始id
+    private mGoodsEndId: number = -1;// 物品资源加载结束id
+    private mOptionComList: OptionComponent[] = [];// 待添加的组件
+    private mGoodsShowPartIdx: number = 0;// 物品展示的数量区间段 
+    
+    public constructor(parent: egret.DisplayObjectContainer) {
+        super(parent);
+        this.skinName = "ProductionSkin";
+    }
+
+    /** call by man */
+    public showUI() {
+        super.showUI();
+    }
+
+    public onOpen(): void {
+
+    }
+
+    public prepare(onSuc: Function, onErr: Function): void {
+        onSuc();
+    }
+
+    /** async call after showUI by sys */
+    public initEvents() {
+        super.initEvents();
+        this.kGrpSwitch.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onSwitch, this);
+        this.kBtnBg.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onSelectBg, this);
+        this.kBtnGoods.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onSelectGoods, this);
+        this.kBtnConditionConfirm.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onConfirmSelectCon, this);
+        this.kBgInputId1.addEventListener(egret.Event.CHANGE, this.onUpdateConDitionConfirmBtnShow, this);
+        this.kBgInputId2.addEventListener(egret.Event.CHANGE, this.onUpdateConDitionConfirmBtnShow, this);
+        this.kGoodsInputStart.addEventListener(egret.Event.CHANGE, this.onUpdateConDitionConfirmBtnShow, this);
+        this.kGoodsInputEnd.addEventListener(egret.Event.CHANGE, this.onUpdateConDitionConfirmBtnShow, this);
+    }
+
+    public removeEvents() {
+        super.removeEvents();
+        this.kGrpSwitch.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onSwitch, this);
+        this.kBtnBg.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onSelectBg, this);
+        this.kBtnGoods.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onSelectGoods, this);
+        this.kBtnConditionConfirm.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onConfirmSelectCon, this);
+        this.kBgInputId1.removeEventListener(egret.Event.CHANGE, this.onUpdateConDitionConfirmBtnShow, this);
+        this.kBgInputId2.removeEventListener(egret.Event.CHANGE, this.onUpdateConDitionConfirmBtnShow, this);
+        this.kGoodsInputStart.removeEventListener(egret.Event.CHANGE, this.onUpdateConDitionConfirmBtnShow, this);
+        this.kGoodsInputEnd.removeEventListener(egret.Event.CHANGE, this.onUpdateConDitionConfirmBtnShow, this);
+    }
+
+    public onPreOpen(): void {
+        // 选择组件初始化
+        this.kGrpSelect.x = -355;
+        this.kImgArrow.source = "com_json.com_btn_arrow_right";
+        // init select condition
+        this.resetCon();
+    }
+
+    /* 选择组件开关 */
+    public onSwitch(): void {
+        this.clear();
+        let switchStatus = Boolean(this.kGrpSelect.x > -355);
+        egret.Tween.removeTweens(this.kGrpSelect);
+        if (switchStatus) {
+            // 收
+            egret.Tween.get(this.kGrpSelect).to({ x: -355 }, 400, egret.Ease.cubicInOut).call(() => {
+                this.kImgArrow.source = "com_json.com_btn_arrow_right";
+            })
+        } else {
+            // 展
+            egret.Tween.get(this.kGrpSelect).to({ x: 0 }, 400, egret.Ease.cubicInOut).call(() => {
+                this.kImgArrow.source = "com_json.com_btn_arrow_left";
+            })
+        }
+    }
+
+    /* 更新条件确认按钮的显示情况 */
+    private onUpdateConDitionConfirmBtnShow(): void {
+        if (ProductModel.instance.selectType == SELECT_TYPE.BG) {
+            this.kBtnConditionConfirm.visible = true;
+            this.kBtnConditionConfirm.enabled = Boolean(this.kBgInputId1.text != "" && this.kBgInputId2.text != "");
+        } else if (ProductModel.instance.selectType == SELECT_TYPE.GOODS) {
+            this.kBtnConditionConfirm.visible = true;
+            this.kBtnConditionConfirm.enabled = Boolean(this.kGoodsInputStart.text != "" && this.kGoodsInputEnd.text != "");
+        } else {
+            this.kBtnConditionConfirm.visible = this.kBtnConditionConfirm.enabled = false;
+        }
+    }
+
+    /* 加载背景资源 */
+    private loadBg(): void {
+        let com = new OptionComponent();
+        com.setData(ProductModel.instance.selectType, this.mBgCon);
+        this.kGrpWarehouse.addChild(com);
+    }
+
+    /* 加载物品资源 */
+    private loadGoods(part: number): void {
+        this.mOptionComList = [];
+        this.kGrpWarehouse.removeChildren();
+        if (this.mGoodsEndId - this.mGoodsStartId > 20) {
+            let startId = this.mGoodsStartId + this.mGoodsShowPartIdx * 20
+            let endIdx = (startId + 20) > this.mGoodsEndId ? this.mGoodsEndId : (startId + 20);
+            for (let i = startId; i <= endIdx; i++) {
+                this.loadPreGoods(i);
+            }
+        } else {
+            for (let i = this.mGoodsStartId; i <= this.mGoodsEndId; i++) {
+                this.loadPreGoods(i);
+            }
+        }
+    }
+
+    /* 加载每一个物件 */
+    private loadPreGoods(goodsId: number): void {
+        let com = new OptionComponent();
+        com.setData(ProductModel.instance.selectType, goodsId);
+        this.kGrpWarehouse.addChild(com);
+    }
+
+    /* 确认加载显示的资源区间条件 */
+    private onConfirmSelectCon(): void {
+        if (ProductModel.instance.selectType == SELECT_TYPE.BG) {
+            this.mBgCon = [Number(this.kBgInputId1.text), Number(this.kBgInputId2.text)];
+            this.loadBg();
+        } else if (ProductModel.instance.selectType == SELECT_TYPE.GOODS) {
+            this.mGoodsStartId = Number(this.kGoodsInputStart.text);
+            this.mGoodsEndId = Number(this.kGoodsInputEnd.text);
+            this.mGoodsShowPartIdx = 0;
+            this.loadGoods(this.mGoodsShowPartIdx);
+        } else {
+            this.clear();
+        }
+    }
+
+    /* 选择背景素材 */
+    private onSelectBg(): void {
+        this.resetCon();
+        this.kGrpSelectBgCondition.visible = true;
+        ProductModel.instance.selectType = SELECT_TYPE.BG;
+    }
+
+    /* 选择物品素材 */
+    private onSelectGoods(): void {
+        this.resetCon();
+        this.kGrpSelectGoodsCondition.visible = true;
+        ProductModel.instance.selectType = SELECT_TYPE.GOODS;
+    }
+
+    /* 重置资源加载条件 */
+    private resetCon(): void {
+        this.kBtnConditionConfirm.enabled = false;
+        this.kBtnConditionConfirm.visible = false;
+        this.kBgInputId1.prompt = "章节id";
+        this.kBgInputId2.prompt = "副本id";
+        this.mBgCon = [];
+        this.kGrpSelectBgCondition.visible = false;
+        this.kGrpSelectGoodsCondition.visible = false;
+        this.mGoodsStartId = this.mGoodsEndId = -1;
+        this.kGoodsInputStart.prompt = "起始id";
+        this.kGoodsInputEnd.prompt = "结束id";
+        this.kGrpWarehouse.removeChildren();
+        this.mOptionComList = [];
+    }
+
+    private clear() {
+        ProductModel.instance.selectType = SELECT_TYPE.NULL;
+        this.resetCon();
+    }
+
+    private onCloseHandler() {
+        this.clear();
+        this.close(0, 1);
+    }
+}

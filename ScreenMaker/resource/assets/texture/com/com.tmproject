@@ -1,0 +1,26 @@
+{
+    "version": 5,
+    "files": [
+        "./../../../../resource_file/texture/com/pet_arrow_right.png",
+        "./../../../../resource_file/texture/com/pet_arrow_left.png",
+        "./../../../../resource_file/texture/com/com_btn_play_on.png",
+        "./../../../../resource_file/texture/com/com_btn_play_down.png",
+        "./../../../../resource_file/texture/com/com_btn_play_disable.png",
+        "./../../../../resource_file/texture/com/com_btn_pause_on.png",
+        "./../../../../resource_file/texture/com/com_btn_pause_down.png",
+        "./../../../../resource_file/texture/com/com_btn_pause_disable.png",
+        "./../../../../resource_file/texture/com/com_bg_5.png",
+        "./../../../../resource_file/texture/com/com_bg_4.png",
+        "./../../../../resource_file/texture/com/com_bg_3.png",
+        "./../../../../resource_file/texture/com/com_bg_2.png",
+        "./../../../../resource_file/texture/com/com_bg_1.png"
+    ],
+    "projectName": "com",
+    "options": {
+        "layoutMath": "3",
+        "sizeMode": "free",
+        "useExtension": 0,
+        "layoutGap": 1,
+        "extend": 1
+    }
+}

@@ -1,0 +1,20 @@
+/**
+ * OptionComponent.ts 待选择的组件
+ * Created by liuyang
+ */
+
+class OptionComponent extends eui.Component implements eui.UIComponent {
+
+    public constructor() {
+        super();
+        this.skinName = "OptionComponentSkin";
+    }
+
+    public setData(...param): void {
+    }
+    
+    public clear(): void {
+        
+    }
+}
+window["OptionComponent"] = OptionComponent;

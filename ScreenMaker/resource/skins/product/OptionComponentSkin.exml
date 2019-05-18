@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="OptionComponentSkin" width="320" height="320" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Group id="kGrpSelect" left="0" right="0" top="0" bottom="0" locked="true">
+		<e:Image source="com_json.com_bg_6" scale9Grid="17,13,1,2" left="0" right="0" top="0" bottom="0"/>
+		<e:Image id="kImgBg" source="bg_0_0_png" scaleX="0.2" scaleY="0.2" x="21" y="94" visible="false"/>
+		<e:Image id="kImgItem" source="goods_52_png" y="18" x="50" visible="false"/>
+	</e:Group>
+	<e:Group id="kGrpSelectStatus" x="0" y="0" touchThrough="true" touchEnabled="false" touchChildren="false" visible="false" locked="true">
+		<e:Image id="kImgCheck" source="com_json.com_bg_4" scale9Grid="49,54,6,3" height="320" y="0" width="320" x="0"/>
+		<e:Image id="kImgSelect" source="com_json.com_btn_check" x="243" y="20"/>
+	</e:Group>
+	<e:Group id="kGrpDetail" x="7" verticalCenter="52" touchChildren="true" touchEnabled="true" touchThrough="false" anchorOffsetX="0">
+		<e:Group x="0" y="26">
+			<e:Label text="posX:" x="0" y="0" textColor="0x7C7C7C" size="20" bold="true"/>
+			<e:EditableText id="kEditX" x="0" y="26" prompt="--" size="20" verticalAlign="middle" textAlign="center" textColor="0xffae00" text="--" bold="true" name="x"/>
+			<e:layout>
+				<e:HorizontalLayout horizontalAlign="left" verticalAlign="middle"/>
+			</e:layout>
+		</e:Group>
+		<e:Group x="0" y="62">
+			<e:Label text="posY:" x="0" y="0" textColor="0x7C7C7C" size="20" bold="true"/>
+			<e:EditableText id="kEditY" x="0" y="26" prompt="--" size="20" verticalAlign="middle" textAlign="center" textColor="0xFFAE00" text="--" bold="true" name="y"/>
+			<e:layout>
+				<e:HorizontalLayout horizontalAlign="left" verticalAlign="middle"/>
+			</e:layout>
+		</e:Group>
+		<e:Group x="0" y="98">
+			<e:Label text="alpha:" x="0" y="0" textColor="0x7C7C7C" size="20" bold="true"/>
+			<e:EditableText id="kEditAlpha" x="0" y="26" prompt="--" size="20" verticalAlign="middle" textAlign="center" textColor="0xFFAE00" text="--" bold="true" name="alpha"/>
+			<e:layout>
+				<e:HorizontalLayout horizontalAlign="left" verticalAlign="middle"/>
+			</e:layout>
+		</e:Group>
+		<e:Group x="0" y="134">
+			<e:Label text="scale:" x="0" y="0" textColor="0x7C7C7C" size="20" bold="true"/>
+			<e:EditableText id="kEditScale" x="0" y="26" prompt="--" size="20" verticalAlign="middle" textAlign="center" textColor="0xFFAE00" text="--" bold="true" name="scale"/>
+			<e:layout>
+				<e:HorizontalLayout horizontalAlign="left" verticalAlign="middle"/>
+			</e:layout>
+		</e:Group>
+		<e:Group x="0" y="196">
+			<e:Label text="rotation:" x="0" y="0" textColor="0x7C7C7C" size="20" bold="true"/>
+			<e:EditableText id="kEditRotation" x="0" y="26" prompt="--" size="20" verticalAlign="middle" textAlign="center" textColor="0xFFAE00" text="--" bold="true" name="rotation"/>
+			<e:layout>
+				<e:HorizontalLayout horizontalAlign="left" verticalAlign="middle"/>
+			</e:layout>
+		</e:Group>
+		<e:Group x="10" y="206">
+			<e:Label text="layerIdx:" x="0" y="0" textColor="0x7C7C7C" size="20" bold="true"/>
+			<e:Group id="kGrpUp" x="89" y="0" touchChildren="false">
+				<e:Image source="com_json.com_bg_7" y="0" scaleX="1" scaleY="1" horizontalCenter="0"/>
+				<e:Label text="上" y="2" textColor="0x000000" horizontalCenter="0" bold="true" size="20"/>
+			</e:Group>
+			<e:Group id="kGrpDown" x="99" y="10" touchChildren="false">
+				<e:Image source="com_json.com_bg_7" y="0" scaleX="1" scaleY="1" horizontalCenter="0"/>
+				<e:Label text="下" y="2" textColor="0x000000" horizontalCenter="0" bold="true" size="20"/>
+			</e:Group>
+			<e:layout>
+			<e:HorizontalLayout horizontalAlign="left" verticalAlign="middle"/>
+			</e:layout>
+		</e:Group>
+		<e:layout>
+			<e:VerticalLayout gap="0"/>
+		</e:layout>
+	</e:Group>
+	<e:Button id="kBtnConfirm" label="选择" x="219" y="260" anchorOffsetY="0" height="50" anchorOffsetX="0" width="90">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="com_json.com_btn_r3"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="-5" bold="true" size="25"/>
+			</e:Skin>
+		</e:skinName>
+	</e:Button>
+	<e:Label id="kLabelId" text="ID:" x="231" y="236" textColor="0x7c7c7c" size="20" bold="true"/>
+</e:Skin>

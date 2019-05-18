@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="OptionComponentSkin" width="320" height="320" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image source="com_json.com_bg_6" scale9Grid="17,13,1,2" left="0" right="0" top="2" bottom="-2"/>
+	<e:Image id="kImgBg" source="bg_0_0_png" scaleX="0.2" scaleY="0.2" horizontalCenter="0" verticalCenter="0" visible="false"/>
+	<e:Image id="kImgItem" source="goods_52_png" left="20" right="20" top="20" bottom="20" visible="false"/>
+	<e:Image id="kImgCheck" source="com_json.com_bg_4" scale9Grid="49,54,6,3" left="0" right="0" top="0" bottom="0"/>
+	<e:Image id="kImgSelect" source="com_json.com_btn_check" x="243" y="20"/>
+</e:Skin>
